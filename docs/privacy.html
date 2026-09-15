@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade — FaccPass</title>
+  <link rel="icon" href="favicon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,sans-serif;color:#1a2b3c;
+      background:linear-gradient(150deg,#f6f9fc 0%,#eaf2f9 100%);min-height:100vh}
+    main{max-width:860px;margin:0 auto;padding:48px 24px 64px}
+    .card{background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(0,68,107,.12);padding:40px}
+    h1{font-size:30px;font-weight:800;color:#00446b;margin-bottom:8px}
+    .meta{font-size:13px;color:#5b6b7a;margin-bottom:28px}
+    h2{font-size:19px;font-weight:700;color:#00446b;margin:26px 0 10px}
+    p{line-height:1.65;margin-bottom:12px;font-size:15px}
+    ul{margin:6px 0 12px 20px}
+    li{line-height:1.6;margin-bottom:6px;font-size:15px}
+    a{color:#0a5f94;font-weight:600}
+    .back{display:inline-block;margin-bottom:24px;font-size:14px}
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="index.html">&larr; Voltar</a>
+    <div class="card">
+      <h1>Política de Privacidade — FaccPass</h1>
+      <div class="meta">Última atualização: setembro de 2026</div>
+
+      <p>Esta política descreve como a extensão do Chrome <strong>FaccPass</strong> trata os dados. O FaccPass é um gerenciador de senhas voltado ao uso em ambientes corporativos, hospedado e administrado pela própria organização que o utiliza.</p>
+
+      <h2>1. Dados coletados</h2>
+      <p>A extensão coleta e processa os seguintes dados, fornecidos diretamente pelo usuário ou pela organização:</p>
+      <ul>
+        <li>Credenciais de acesso (usuário e senha) armazenadas nos cofres setoriais;</li>
+        <li>Dados de perfil do usuário necessários ao controle de acesso (nome, papel, setor);</li>
+        <li>Informações de sessão (token de autenticação) necessárias para comunicação com a API.</li>
+      </ul>
+
+      <h2>2. Finalidade e uso</h2>
+      <p>Os dados são usados exclusivamente para:</p>
+      <ul>
+        <li>Armazenar, gerenciar e recuperar as credenciais do cofre do setor; e</li>
+        <li>Executar o preenchimento automático de formulários de login em páginas da organização.</li>
+      </ul>
+
+      <h2>3. Armazenamento e segurança</h2>
+      <p>As senhas são criptografadas com AES-256 a partir do servidor, nunca transmitidas em claro na resposta da API de listagem, e a autenticação se dá via JWT com expiração. O token de sessão é mantido localmente no navegador (<code>chrome.storage.local</code>) e nunca é enviado a terceiros.</p>
+
+      <h2>4. Permissões e justificativa</h2>
+      <ul>
+        <li><strong>storage</strong>: guarda localmente o token de sessão e as preferências de preenchimento (<code>autoFill</code>, <code>autoFillDelay</code>).</li>
+        <li><strong>activeTab</strong>: permite acessar a aba ativa somente quando o usuário clica na extensão para preencher um formulário de login.</li>
+        <li><strong>scripting</strong>: injeta o preenchimento no formulário detectado da aba ativa, sob solicitação do usuário.</li>
+        <li><strong>tabs</strong>: identifica a aba ativa para exibir as senhas correspondentes ao domínio visitado.</li>
+        <li><strong>notifications</strong>: notifica o usuário sobre a conclusão do preenchimento automático.</li>
+        <li><strong>Host permissions</strong>: conexão exclusiva com a API do FaccPass (endereço corporativo configurado). Nenhum outro host é acessado.</li>
+      </ul>
+
+      <h2>5. Compartilhamento de dados</h2>
+      <p>A extensão <strong>não vende, não aluga e não compartilha dados pessoais com terceiros</strong>. Os dados trafegam apenas entre o navegador do usuário e o servidor do FaccPass administrado pela organização.</p>
+
+      <h2>6. Código remoto</h2>
+      <p>A extensão <strong>não executa código remoto</strong>. Ela consulta exclusivamente dados em formato JSON da API do FaccPass. Todo o código executável está empacotado na própria extensão.</p>
+
+      <h2>7. Retenção e exclusão</h2>
+      <p>Os dados permanecem nos cofres enquanto a organização assim definir. A exclusão de senhas e usuários é realizada pelos administradores através da própria aplicação.</p>
+
+      <h2>8. Contato</h2>
+      <p>Dúvidas sobre esta política podem ser enviadas para: <a href="mailto:ttpmorp@proton.me">ttpmorp@proton.me</a>.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FaccPass — Gerenciador de Senhas Empresarial</title>
+  <link rel="icon" href="favicon.png">
+  <meta name="description" content="Gerenciador de senhas corporativo organizado por setores, com criptografia AES-256 e extensão para Chrome.">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,sans-serif;color:#1a2b3c;
+      background:linear-gradient(150deg,#f6f9fc 0%,#eaf2f9 100%);min-height:100vh}
+    header{background:linear-gradient(140deg,#0b2b44 0%,#00446b 52%,#0a5f94 100%);color:#fff;padding:56px 24px 72px;
+      text-align:center}
+    header img{height:44px;margin-bottom:22px}
+    header h1{font-size:40px;font-weight:800;margin-bottom:12px}
+    header p{font-size:18px;color:#d7ecfa;max-width:620px;margin:0 auto;line-height:1.5}
+    main{max-width:960px;margin:-32px auto 0;padding:0 24px 64px}
+    .card{background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(0,68,107,.14);padding:40px;margin-bottom:24px}
+    h2{font-size:22px;font-weight:800;color:#00446b;margin-bottom:16px}
+    p{line-height:1.6;margin-bottom:12px}
+    ul{margin:8px 0 16px 20px}
+    li{line-height:1.6;margin-bottom:6px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+    .badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:8px 16px;border-radius:999px;
+      font-size:13px;color:#eaf6ff}
+    a{color:#0a5f94;font-weight:600}
+    footer{padding:24px;color:#5b6b7a;font-size:13px}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="favicon.png" alt="FaccPass">
+    <h1>FaccPass</h1>
+    <p>Gerenciador de senhas corporativo, organizado por setores, com acesso baseado em papéis, criptografia AES-256 e extensão para Chrome.</p>
+    <div class="badges">
+      <span class="badge">Criptografia AES-256</span>
+      <span class="badge">4 papéis de acesso</span>
+      <span class="badge">Extensão Chrome</span>
+      <span class="badge">Auditoria de ações</span>
+      <span class="badge">Gerador de senhas</span>
+      <span class="badge">Suporte LDAP/AD</span>
+    </div>
+  </header>
+  <main>
+    <div class="card">
+      <h2>Sobre o FaccPass</h2>
+      <p>O FaccPass é um gerenciador de senhas para organizações que precisam manter o controle de credenciais por setor. Cada setor possui o seu próprio cofre de senhas e o acesso é governado por papéis:</p>
+      <ul>
+        <li><strong>viewer</strong> — visualiza senhas do seu setor</li>
+        <li><strong>admin</strong> — cria e edita senhas + gerencia usuários do setor</li>
+        <li><strong>superadmin</strong> — acesso ao setor pessoal + setor de TI</li>
+        <li><strong>mestre</strong> — administração total (dono do setor de TI)</li>
+      </ul>
+      <p>Todas as senhas são armazenadas criptografadas com AES-256, com IV único por senha, e toda ação é registrada em um log de auditoria.</p>
+    </div>
+    <div class="card">
+      <h2>Extensão para Chrome</h2>
+      <p>A extensão FaccPass se conecta à API do seu servidor e permite gerenciar credenciais diretamente pelo navegador:</p>
+      <ul>
+        <li>Copiar credenciais de sites em um clique</li>
+        <li>Preenchimento automático de formulários de login</li>
+        <li>Gerador de senhas seguras</li>
+        <li>Gestão de usuários, setores e permissões</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Privacidade e Segurança</h2>
+      <p>A extensão utiliza as permissões solicitadas de forma mínima e justificada:</p>
+      <ul>
+        <li><strong>storage</strong> — guarda localmente o token de sessão e preferências de preenchimento</li>
+        <li><strong>activeTab / tabs / scripting</strong> — acessam a aba ativa apenas quando o usuário usa a extensão para preencher formulários</li>
+        <li><strong>notifications</strong> — informam o resultado do preenchimento automático</li>
+        <li><strong>host permissions</strong> — conexão exclusiva com a API do FaccPass do seu servidor</li>
+      </ul>
+      <p>A extensão não executa código remoto. Ela apenas consulta dados (JSON) da API do FaccPass. Nenhum dado é vendido ou compartilhado com terceiros.</p>
+      <p><a href="privacy.html">Política de Privacidade</a></p>
+    </div>
+  </main>
+  <footer>
+    <p>Desenvolvido por Julia · Apoio institucional: <a href="https://www.facc.org.br/">FACC</a></p>
+    <p>Não afiliado ao Google. O Chrome é uma marca da Google LLC.</p>
+  </footer>
+</body>
+</html>
